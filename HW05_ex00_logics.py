@@ -19,7 +19,10 @@ def even_odd():
         else:
             print("Its Odd !")
     except Exception as e:
-        print("You must enter an integer !")
+        if(type(e).__name__ == "ValueError"):
+            print("You must enter an integer !" )
+        else:
+            print("Please enter something ! ")
     pass
 
 
