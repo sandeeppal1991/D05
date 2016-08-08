@@ -7,11 +7,17 @@
 # Imports
 
 # Body
-
+def print_words():
+    file_object = open("words.txt")
+    for word in file_object:
+        if(len(word.strip()) > 20 ):
+            print(word)
 
 ##############################################################################
 def main():
     pass  # Call your functions here.
+    print("\n\nThe words which are more than 20 characters in the file words.txt are : \n\n")
+    print_words()
 
 if __name__ == '__main__':
     main()

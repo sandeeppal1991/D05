@@ -12,11 +12,36 @@ def even_odd():
         Prints determination
         returns None
     """
+    try:
+        user_input = int(input("Enter a number to determine if even or odd : "))
+        if(user_input % 2 == 0):
+            print("It's Even !")
+        else:
+            print("Its Odd !")
+    except Exception as e:
+        print("You must enter an integer !")
     pass
 
 
 def ten_by_ten():
     """ Prints integers 1 through 100 sequentially in a ten by ten grid."""
+    print("#"*100 +"\n\n\nHere is the 10 by 10 grid ! Tada !\n\n\n ")
+    iterator = 1
+    # using the row_line variable to print a line of numbers
+    row_line = ""
+    while(iterator <= 100):
+        if(iterator % 10 == 0):
+            #using the condition to print a new line when the iterator is a multiple of 10
+            print(row_line +" "+ str(iterator))
+            print("\n")
+            row_line = ""
+        else:
+            # if the iterator is not a multiple of 10 then keep appending numbers to a row
+            if(iterator < 10):
+                row_line += str(iterator) + "  "
+            else:
+                row_line += str(iterator) + " "
+        iterator += 1
     pass
 
 
@@ -24,6 +49,23 @@ def find_average():
     """ Takes numeric input (non-word numerals) from the user, one number
     at a time. Once the user types 'done', returns the average.
     """
+    print ("This program is to find the average of all the numbers you would enter. When you want to see the average of all the numbers that you have enetered, type 'done' ")
+    count_of_numbers = 0
+    total_value = 0
+    try:
+        while(True):
+            user_input = input("Enter a number : ")
+            if(user_input.lower() == "done"):
+                print("The Average of the numbers you entered is : " + str(total_value/count_of_numbers))
+                break;
+            else:
+                count_of_numbers += 1
+                total_value += int(user_input)
+    except Exception as e:
+        if(type(e).__name__ == "ValueError"):
+            print("You must enter an integer !" )
+        else:
+            print("Please enter something ! ")
     pass
 
 
@@ -35,7 +77,11 @@ def main():
     Prints the following function:
         - find_average()
     """
+
     pass
+    even_odd()
+    ten_by_ten()
+    find_average()
 
 if __name__ == '__main__':
     main()
