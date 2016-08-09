@@ -35,24 +35,20 @@ def ten_by_ten():
     while(iterator <= 100):
         if(iterator % 10 == 0):
             #using the condition to print a new line when the iterator is a multiple of 10
-            print(row_line +" "+ str(iterator))
-            print("\n")
+            row_line += "{:<3}".format(str(iterator))
+            print(row_line)
             row_line = ""
         else:
             # if the iterator is not a multiple of 10 then keep appending numbers to a row
-            if(iterator < 10):
-                row_line += str(iterator) + "  "
-            else:
-                row_line += str(iterator) + " "
+            row_line += "{:<3}".format(str(iterator))
         iterator += 1
-    pass
 
 
 def find_average():
     """ Takes numeric input (non-word numerals) from the user, one number
     at a time. Once the user types 'done', returns the average.
     """
-    print ("This program is to find the average of all the numbers you would enter. When you want to see the average of all the numbers that you have enetered, type 'done' ")
+    print ("\n\nThis program is to find the average of all the numbers you would enter. When you want to see the average of all the numbers that you have enetered, type 'done' ")
     count_of_numbers = 0
     total_value = 0
     try:
