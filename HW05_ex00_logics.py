@@ -23,7 +23,6 @@ def even_odd():
             print("You must enter an integer !" )
         else:
             print("Please enter something ! ")
-    pass
 
 
 def ten_by_ten():
